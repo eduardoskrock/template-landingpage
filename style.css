@@ -1,14 +1,14 @@
 /* Variáveis de Cores Atualizadas (Fiel aos Prints) */
 :root {
-    --primary-color: #3b7dd8; /* Tom terroso padrão */
-    --secondary-color: #b23fff; 
-    --accent-color: #5f1800; /* Laranja/Coral dos botões e ícones */
-    --bg-light: #FBF8F5; 
+    --primary-color: #be7726; /* Tom terroso padrão */
+    --secondary-color: #005e56; 
+    --accent-color: #ff612d; /* Laranja/Coral dos botões e ícones */
+    --bg-light: #fcfcfc; 
     --bg-card-pink: #FDF4F2; /* Fundo rosinha das colunas de situações */
     --text-dark: #333333;
-    --text-brown: #8A4E41; /* Marrom escuro para títulos secundários */
+    --text-brown: #ac5744; /* Marrom escuro para títulos secundários */
     --white: #FFFFFF;
-    --border-color: #EAEAEA;
+    --border-color: #ec7272;
     --header-height: 80px;
 }
 
@@ -47,12 +47,12 @@ a {
 }
 
 p, span, a, h4, ul{
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'Heebo', 'Google Sans', sans-serif;
     line-height: 1.2rem;
 }
 
 h1, h2, h3 {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 /* Utilitários */
@@ -81,7 +81,7 @@ h1, h2, h3 {
     border: none;
 }
 .btn-primary { background-color: var(--primary-color); color: var(--white); }
-.btn-primary:hover { background-color: var(--text-brown); }
+.btn-primary:hover { background-color: var(--accent-color); }
 .btn-secondary { background-color: var(--secondary-color); color: var(--white); }
 .btn-outline { background-color: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); }
 
@@ -157,7 +157,7 @@ section.visivel {
     display: block;
     font-size: 0.85rem;
     font-weight: 700;
-    color: #3A78DF; /* Azul do texto superior */
+    color: var(--border-color); /* Azul do texto superior */
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 25px;
@@ -177,13 +177,13 @@ section.visivel {
 .highlight-italic {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
-    color: #BCA786; /* Dourado/Bege do texto em itálico */
+    color: var(--secondary-color);/* Dourado/Bege do texto em itálico */
 }
 
 /* Parágrafo */
 .hero-description {
     font-size: 1.15rem;
-    color: #667085;
+    color: var(--text-dark);
     line-height: 1.6;
     margin-bottom: 40px;
 }
@@ -193,7 +193,7 @@ section.visivel {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background-color: #3A78DF; /* Azul vibrante do botão */
+    background-color: var(--secondary-color); /* Azul vibrante do botão */
     color: #FFFFFF;
     padding: 16px 35px;
     border-radius: 50px; /* Formato de pílula arredondado */
@@ -241,6 +241,10 @@ section.visivel {
     background-color: #BCA786; /* Cor da bolinha baseada no texto em itálico */
     border-radius: 50%;
     display: inline-block;
+}
+
+.hero-image > img, .atuacao-professional > img{
+    border-radius: 20px;
 }
 
 /* Responsividade Mobile e Tablet */
@@ -342,7 +346,7 @@ section.visivel {
 }
 
 .reason-number {
-    background-color: var(--accent-color); /* Usa o coral/laranja do projeto */
+    background-color: var(--secondary-color); /* Usa o coral/laranja do projeto */
     color: var(--white);
     font-size: 1.2rem;
     font-weight: bold;
@@ -359,6 +363,82 @@ section.visivel {
     font-size: 1.15rem;
     color: #00303F; /* Tom azul escuro/chumbo bem característico do print */
     line-height: 1.5;
+}
+
+.service-type{
+    padding: 2rem;
+    background-color: var(--bg-light);
+    border-radius: 20px;
+}
+
+/* ==========================================================================
+   SEÇÃO DO DESENVOLVEDOR (Autoridade)
+   ========================================================================== */
+.developer-section {
+    background: var(--bg-light-mint); /* Alterna o fundo para separar do formulário ou do rodapé */
+    padding: 100px 0;
+}
+
+/* Aproveita a base do testimonial, mas ajusta o espaçamento interno */
+.developer-card {
+    gap: 60px;
+    align-items: center; 
+}
+
+.developer-image {
+    flex: 0 0 350px; /* Largura fixa da foto no computador */
+}
+
+.developer-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: var(--border-radius-lg);
+}
+
+.developer-info {
+    flex: 1;
+    text-align: left;
+}
+
+.developer-role {
+    color: var(--primary-green);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.developer-bio {
+    margin-bottom: 32px;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
+
+/* Modificador da lista com check verde para ficar em 1 coluna */
+.developer-features {
+    grid-template-columns: 1fr; 
+    gap: 12px;
+    margin-bottom: 0;
+}
+
+/* Ajustes Responsivos (Tablet e Celular) */
+@media (max-width: 992px) {
+    .developer-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .developer-info {
+        text-align: center;
+    }
+    
+    .developer-features {
+        text-align: left; /* Mantém os checks alinhados à esquerda para leitura, mesmo com o texto centralizado */
+        display: inline-grid; /* Truque para centralizar a lista como um bloco */
+    }
 }
 
 
